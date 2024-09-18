@@ -80,12 +80,13 @@ def valid_password(password):
         Validates the password based on the following rule:
         - The password must contain at least 8 characters.
         - at least one uppercase(lookahead assertion is used)
+        - at least one numeric character
     Parameters:
         password (str): The password to be validated.
     Return:
         bool: Returns True if the password is valid, otherwise False.
     """
-    pattern = re.compile(r'^(?=.*[A-Z])[A-Za-z0-9]{8,}$')
+    pattern = re.compile(r'^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$')
 
     if pattern.match(password):
         return True
