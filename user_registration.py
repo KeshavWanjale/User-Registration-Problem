@@ -40,6 +40,7 @@ def validate_email(email):
     """
     Description:
         Validates the email address based on the following rules:
+        eg. abc.xyz@bl.co.in
         - Email must have three mandatory parts (abc, bl, co).
         - Email can have two optional parts (xyz, in).
         - The '@' symbol must separate the local part and the domain.
@@ -87,61 +88,66 @@ def valid_password(password):
     Return:
         bool: Returns True if the password is valid, otherwise False.
     """
-    pattern = re.compile(r'^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]:;"\'<>,.?/\\|-])[a-zA-Z\d!@#$%^&*()_+={}\[\]:;"\'<>,.?/\\|-]{8,}$')
+    pattern = re.compile(
+        r'^(?=.*[A-Z])'           
+        r'(?=.*\d)'               
+        r'(?=.*[!@#$%^&*()_+])'  
+        r'[A-Za-z\d!@#$%^&*()_+]{8,}$'
+    )
 
     if pattern.match(password):
         return True
     else:
-        False
+        return False
 
 
-def user_registration_form():
-    """
-    Description:
-        Takes user input for fields in rgistration form.
-    Parameters:
-        None
-    Return:
-        returns if input is valid or not.
-    """
-    while True:
-        first_name = input("Enter your first name: ")
-        if validate_first_name(first_name):
-            print(f"First name {first_name} is valid.")
-            break
-        else:
-            print(f"First name {first_name} is invalid.")
+# def user_registration_form():
+#     """
+#     Description:
+#         Takes user input for fields in rgistration form.
+#     Parameters:
+#         None
+#     Return:
+#         returns if input is valid or not.
+#     """
+#     while True:
+#         first_name = input("Enter your first name: ")
+#         if validate_first_name(first_name):
+#             print(f"First name {first_name} is valid.")
+#             break
+#         else:
+#             print(f"First name {first_name} is invalid.")
     
-    while True:
-        last_name = input("Enter your last name: ")
-        if validate_last_name(last_name):
-            print(f"Last name {last_name} is valid.")
-            break
-        else:
-            print(f"Last name {last_name} is invalid.")
-    while True:
-        email = input("Enter your email: ")
-        if validate_email(email):
-            print(f"Email {email} is valid.")
-            break
-        else:
-            print(f"Email {email} is invalid.")
+#     while True:
+#         last_name = input("Enter your last name: ")
+#         if validate_last_name(last_name):
+#             print(f"Last name {last_name} is valid.")
+#             break
+#         else:
+#             print(f"Last name {last_name} is invalid.")
+#     while True:
+#         email = input("Enter your email: ")
+#         if validate_email(email):
+#             print(f"Email {email} is valid.")
+#             break
+#         else:
+#             print(f"Email {email} is invalid.")
     
-    while True:
-        mobile_number = input("Enter your mobile number: ")
-        if validate_mobile_number(mobile_number):
-            print(f"Mobile number {mobile_number} is valid.")
-            break
-        else:
-            print(f"Mobile number {mobile_number} is invalid.")
+#     while True:
+#         mobile_number = input("Enter your mobile number: ")
+#         if validate_mobile_number(mobile_number):
+#             print(f"Mobile number {mobile_number} is valid.")
+#             break
+#         else:
+#             print(f"Mobile number {mobile_number} is invalid.")
 
-    while True:
-        password = input("Enter your password: ")
-        if valid_password(password):
-            print(f"Password {password} is valid.")
-            break
-        else:
-            print(f"Password {password} is invalid.")
+#     while True:
+#         password = input("Enter your password: ")
+#         if valid_password(password):
+#             print(f"Password {password} is valid.")
+#             break
+#         else:
+#             print(f"Password {password} is invalid.")
 
 
-user_registration_form()
+# user_registration_form()
