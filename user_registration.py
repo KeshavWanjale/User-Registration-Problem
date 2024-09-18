@@ -13,9 +13,10 @@ def validate_first_name(first_name):
     """
     pattern = re.compile(r'^[A-Z][a-z]{2,}$')
 
-    if not pattern.match(first_name) :
-        print(f"First name: {first_name} is invalid.",
-              "\nName must start with Capital and atleast have 3 characters.")
+    if pattern.match(first_name) :
+        return True
+    else:
+        return False
 
 def validate_last_name(last_name):
     """
@@ -30,9 +31,10 @@ def validate_last_name(last_name):
     """
     pattern = re.compile(r'^[A-Z][a-z]{2,}$')
 
-    if not pattern.match(last_name) :
-        print(f"Last name: {last_name} is invalid.",
-              "\nName must start with Capital and atleast have 3 characters.")
+    if pattern.match(last_name) :
+        return True
+    else:
+        return False
 
 def validate_email(email):
     """
@@ -48,9 +50,11 @@ def validate_email(email):
         bool: Returns True if the email is valid, otherwise False.
     """
     pattern = re.compile(r'^([a-zA-Z0-9]{3,})+(\.[a-zA-Z0-9]+)?@[a-zA-Z]{2,}\.[a-z]{2,}(?:\.[a-zA-Z]{2,})?$')
-    if not pattern.match(email):
-        print(f"Email: {email} is invalid.")
-
+    if pattern.match(email):
+        return True
+    else:
+        return False
+    
 def validate_mobile_number(mobile_number):
     """
         Description:
@@ -61,12 +65,31 @@ def validate_mobile_number(mobile_number):
         Parameters:
         mobile number (str): The mobile number to be validated.
         Return:
-            bool: Returns True if the email is valid, otherwise False.
+            bool: Returns True if the mobile is valid, otherwise False.
     """
     pattern = re.compile(r'^[0-9]{2}\s[0-9]{10}$')
 
-    if not pattern.match(mobile_number):
-        print(f"Mobile Number: {mobile_number} is invalid.")
+    if pattern.match(mobile_number):
+        return True
+    else:
+        return False
+
+def valid_password_rule1(password):
+    """
+    Description:
+        Validates the password based on the following rule:
+        - The password must contain at least 8 characters.
+    Parameters:
+        password (str): The password to be validated.
+    Return:
+        bool: Returns True if the password is valid, otherwise False.
+    """
+    pattern = re.compile(r'^[A-Za-z0-9]{8,}$')
+
+    if pattern.match(password):
+        return True
+    else:
+        False
 
 
 def user_registration_form():
@@ -78,17 +101,44 @@ def user_registration_form():
     Return:
         returns if input is valid or not.
     """
-    first_name = input("Enter your first name: ")
-    validate_first_name(first_name)
+    while True:
+        first_name = input("Enter your first name: ")
+        if validate_first_name(first_name):
+            print(f"First name {first_name} is valid.")
+            break
+        else:
+            print(f"First name {first_name} is invalid.")
+    
+    while True:
+        last_name = input("Enter your last name: ")
+        if validate_last_name(last_name):
+            print(f"Last name {last_name} is valid.")
+            break
+        else:
+            print(f"Last name {last_name} is invalid.")
+    while True:
+        email = input("Enter your email: ")
+        if validate_email(email):
+            print(f"Email {email} is valid.")
+            break
+        else:
+            print(f"Email {email} is invalid.")
+    
+    while True:
+        mobile_number = input("Enter your mobile number: ")
+        if validate_mobile_number(mobile_number):
+            print(f"Mobile number {mobile_number} is valid.")
+            break
+        else:
+            print(f"Mobile number {mobile_number} is invalid.")
 
-    last_name = input("Enter your last name: ")
-    validate_last_name(last_name)
-
-    email = input("Enter your email: ")
-    validate_email(email)
-
-    mobile_number = input("Enter your mobile number: ")
-    validate_mobile_number(mobile_number)
+    while True:
+        password = input("Enter your password: ")
+        if valid_password_rule1(password):
+            print(f"Password {password} is valid.")
+            break
+        else:
+            print(f"Password {password} is invalid.")
 
 
 user_registration_form()
