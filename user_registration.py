@@ -51,7 +51,33 @@ def validate_email(email):
     if not pattern.match(email):
         print(f"Email: {email} is invalid.")
 
+def validate_mobile_number(mobile_number):
+    """
+        Description:
+            Validates the mobile number based on
+            - The string must start with two digits (e.g., a country code).
+            - Followed by a single space.
+            - Then, exactly ten digits (which could represent a phone number).
+        Parameters:
+        mobile number (str): The mobile number to be validated.
+        Return:
+            bool: Returns True if the email is valid, otherwise False.
+    """
+    pattern = re.compile(r'^[0-9]{2}\s[0-9]{10}$')
+
+    if not pattern.match(mobile_number):
+        print(f"Mobile Number: {mobile_number} is invalid.")
+
+
 def user_registration_form():
+    """
+    Description:
+        Takes user input for fields in rgistration form.
+    Parameters:
+        None
+    Return:
+        returns if input is valid or not.
+    """
     first_name = input("Enter your first name: ")
     validate_first_name(first_name)
 
@@ -60,6 +86,9 @@ def user_registration_form():
 
     email = input("Enter your email: ")
     validate_email(email)
+
+    mobile_number = input("Enter your mobile number: ")
+    validate_mobile_number(mobile_number)
 
 
 user_registration_form()
