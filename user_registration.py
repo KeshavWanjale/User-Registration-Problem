@@ -81,12 +81,13 @@ def valid_password(password):
         - The password must contain at least 8 characters.
         - at least one uppercase(lookahead assertion is used)
         - at least one numeric character
+        - at least one special character
     Parameters:
         password (str): The password to be validated.
     Return:
         bool: Returns True if the password is valid, otherwise False.
     """
-    pattern = re.compile(r'^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$')
+    pattern = re.compile(r'^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]:;"\'<>,.?/\\|-])[a-zA-Z\d!@#$%^&*()_+={}\[\]:;"\'<>,.?/\\|-]{8,}$')
 
     if pattern.match(password):
         return True
@@ -103,36 +104,36 @@ def user_registration_form():
     Return:
         returns if input is valid or not.
     """
-    # while True:
-    #     first_name = input("Enter your first name: ")
-    #     if validate_first_name(first_name):
-    #         print(f"First name {first_name} is valid.")
-    #         break
-    #     else:
-    #         print(f"First name {first_name} is invalid.")
+    while True:
+        first_name = input("Enter your first name: ")
+        if validate_first_name(first_name):
+            print(f"First name {first_name} is valid.")
+            break
+        else:
+            print(f"First name {first_name} is invalid.")
     
-    # while True:
-    #     last_name = input("Enter your last name: ")
-    #     if validate_last_name(last_name):
-    #         print(f"Last name {last_name} is valid.")
-    #         break
-    #     else:
-    #         print(f"Last name {last_name} is invalid.")
-    # while True:
-    #     email = input("Enter your email: ")
-    #     if validate_email(email):
-    #         print(f"Email {email} is valid.")
-    #         break
-    #     else:
-    #         print(f"Email {email} is invalid.")
+    while True:
+        last_name = input("Enter your last name: ")
+        if validate_last_name(last_name):
+            print(f"Last name {last_name} is valid.")
+            break
+        else:
+            print(f"Last name {last_name} is invalid.")
+    while True:
+        email = input("Enter your email: ")
+        if validate_email(email):
+            print(f"Email {email} is valid.")
+            break
+        else:
+            print(f"Email {email} is invalid.")
     
-    # while True:
-    #     mobile_number = input("Enter your mobile number: ")
-    #     if validate_mobile_number(mobile_number):
-    #         print(f"Mobile number {mobile_number} is valid.")
-    #         break
-    #     else:
-    #         print(f"Mobile number {mobile_number} is invalid.")
+    while True:
+        mobile_number = input("Enter your mobile number: ")
+        if validate_mobile_number(mobile_number):
+            print(f"Mobile number {mobile_number} is valid.")
+            break
+        else:
+            print(f"Mobile number {mobile_number} is invalid.")
 
     while True:
         password = input("Enter your password: ")
