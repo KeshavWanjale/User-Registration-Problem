@@ -101,53 +101,54 @@ def valid_password(password):
         return False
 
 
-# def user_registration_form():
-#     """
-#     Description:
-#         Takes user input for fields in rgistration form.
-#     Parameters:
-#         None
-#     Return:
-#         returns if input is valid or not.
-#     """
-#     while True:
-#         first_name = input("Enter your first name: ")
-#         if validate_first_name(first_name):
-#             print(f"First name {first_name} is valid.")
-#             break
-#         else:
-#             print(f"First name {first_name} is invalid.")
+def user_registration_form():
+    """
+    Description:
+        Takes user input for fields in rgistration form.
+    Parameters:
+        None
+    Return:
+        returns if input is valid or not.
+    """
+    while True:
+        first_name = input("Enter your first name: ")
+        if validate_first_name(first_name):
+            print(f"First name {first_name} is valid.")
+            break
+        else:
+            print(f"First name {first_name} is invalid.")
     
-#     while True:
-#         last_name = input("Enter your last name: ")
-#         if validate_last_name(last_name):
-#             print(f"Last name {last_name} is valid.")
-#             break
-#         else:
-#             print(f"Last name {last_name} is invalid.")
-#     while True:
-#         email = input("Enter your email: ")
-#         if validate_email(email):
-#             print(f"Email {email} is valid.")
-#             break
-#         else:
-#             print(f"Email {email} is invalid.")
+    while True:
+        last_name = input("Enter your last name: ")
+        if validate_last_name(last_name):
+            print(f"Last name {last_name} is valid.")
+            break
+        else:
+            print(f"Last name {last_name} is invalid.")
+    while True:
+        email = input("Enter your email: ")
+        if validate_email(email):
+            print(f"Email {email} is valid.")
+            break
+        else:
+            print(f"Email {email} is invalid.")
     
-#     while True:
-#         mobile_number = input("Enter your mobile number: ")
-#         if validate_mobile_number(mobile_number):
-#             print(f"Mobile number {mobile_number} is valid.")
-#             break
-#         else:
-#             print(f"Mobile number {mobile_number} is invalid.")
+    while True:
+        mobile_number = input("Enter your mobile number: ")
+        if validate_mobile_number(mobile_number):
+            print(f"Mobile number {mobile_number} is valid.")
+            break
+        else:
+            print(f"Mobile number {mobile_number} is invalid.")
 
-#     while True:
-#         password = input("Enter your password: ")
-#         if valid_password(password):
-#             print(f"Password {password} is valid.")
-#             break
-#         else:
-#             print(f"Password {password} is invalid.")
+    while True:
+        password = input("Enter your password: ")
+        if valid_password(password):
+            print(f"Password {password} is valid.")
+            break
+        else:
+            print(f"Password {password} is invalid.")
 
 
-# user_registration_form()
+if __name__ == "__main__":
+    user_registration_form()
