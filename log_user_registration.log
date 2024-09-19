@@ -1,0 +1,10 @@
+2024-09-19 14:35:44,648 - __main__ - WARNING - First name 'Ke' is invalid.
+2024-09-19 14:35:48,227 - __main__ - INFO - First name 'Keshav' is valid.
+2024-09-19 14:35:55,573 - __main__ - WARNING - Last name '1Wan' is invalid.
+2024-09-19 14:36:05,462 - __main__ - INFO - Last name 'Wanjale' is valid.
+2024-09-19 14:36:17,133 - __main__ - WARNING - Email 'kesh@gmail' is invalid.
+2024-09-19 14:36:21,781 - __main__ - INFO - Email 'kesh@gmail.com' is valid.
+2024-09-19 14:36:30,168 - __main__ - WARNING - Mobile number '919561699569' is invalid.
+2024-09-19 14:36:34,093 - __main__ - INFO - Mobile number '91 9561699569' is valid.
+2024-09-19 14:36:40,744 - __main__ - WARNING - Password is invalid.
+2024-09-19 14:36:45,334 - __main__ - INFO - Password is valid.
